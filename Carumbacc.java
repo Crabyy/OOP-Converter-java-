@@ -5,25 +5,30 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class Carumba {
+public class Carumbacc {
 
     private JFrame frame;
     private JTextField inputField;
     private JTextArea resultArea;
 
-    public Carumba() {
+    //this is a constructor
+    public Carumbacc() {
+        //the title, size, and layout for the GUI
         frame = new JFrame("Calculator for Convertion");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(400, 400);
         frame.setLayout(new BorderLayout());
 
+        //border of the GUI and the input field/area
         JPanel inputPanel = new JPanel();
         inputPanel.setLayout(new BorderLayout());
         inputField = new JTextField();
-        inputField.setHorizontalAlignment(JTextField.RIGHT);
+        inputField.setHorizontalAlignment(JTextField.RIGHT); //to make the input in the right alignment
         inputField.setFont(new Font("Tahoma", Font.PLAIN, 30));
         inputField.setEditable(true); // Set to editable
         inputField.addKeyListener(new KeyListener() {
+
+            //function to get input from the user's keyboard
             @Override
             public void keyTyped(KeyEvent e) {
                 e.consume(); // Consume the key event to prevent input duplication
@@ -156,7 +161,7 @@ public class Carumba {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new Carumba();
+                new Carumbacc();
             }
         });
     }
